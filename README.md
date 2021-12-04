@@ -4,8 +4,11 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Explorando o Amazon RDS, um serviço de provisionamente e gerenciamento de banco de dados relacional na AWS.
     <br><br>
     <strong>Serviços utilizados</strong>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amazon RDS;<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AWS Lambda; e<br>
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amazon RDS;
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AWS Lambda; e
+    <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MySQL Workbench.
     <br><br>
     <strong>O que é um banco de dados relacional?</strong>
@@ -56,4 +59,49 @@
     <img src="https://github.com/lucasrmagalhaes/sql-aws/blob/main/assets/img/Arquitetura%20de%20Tabelas.jpg" alt="Arquitetura de Tabelas" title="Arquitetura de Tabelas" />
     <br><br>
     <img src="https://github.com/lucasrmagalhaes/sql-aws/blob/main/assets/img/Arquitetura%20do%20Sistema.jpg" alt="Arquitetura de Sistemas" title="Arquitetura de Sistemas" />
+    <br><br>
+    <strong>Criando queries</strong>
 </p>
+
+- Criar um database: 
+```
+CREATE DATABASE PERMISSIONS_DB;
+```
+
+- Acessar o db criado:
+```
+USE PERMISSIONS_DB;
+```
+
+- Criar uma tabela de usuários:
+```mysql
+CREATE TABLE user (
+  id bigint(20) NOT NULL, 
+  email varchar(40) NOT NULL,
+  username varchar(15) NOT NULL,
+  password varchar(100) NOT NULL,
+  PRIMARY KEY (id)
+);
+```
+
+- Criar uma tabela de carrinho de compras:
+```
+CREATE TABLE role (
+  id bigint(20) NOT NULL,
+  name varchar(60) NOT NULL, 
+  PRIMARY KEY (id)
+);
+```
+- Criar uma tabela user roles:
+```
+CREATE TABLE user_roles (
+  user_id bigint(20) NOT NULL,
+  role_id bigint(20) NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES user (id) ON DELETE RESTRICT ON UPDATE CASCADE,
+  FOREIGN KEY (role_id) REFERENCES role (id) ON DELETE RESTRICT ON UPDATE CASCADE,
+  PRIMARY KEY (user_id, role_id)
+);
+```
+
+Descrição da tabela:
+```DESC user```
