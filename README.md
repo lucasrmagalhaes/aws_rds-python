@@ -1,5 +1,7 @@
 ### Bancos de Dados Relacionais (SQL) na AWS com Amazon RDS
 
+<img src="https://github.com/lucasrmagalhaes/rds-aws/blob/main/assets/gif/Test.gif" />
+
 <p align="justify">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Explorando o Amazon RDS, um serviço de provisionamente e gerenciamento de banco de dados relacional na AWS.
     <br><br>
