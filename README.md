@@ -31,7 +31,7 @@
     <br>
     O Amazon Relational Database Service (Amazon RDS) facilita a configuração, a operação e a escalabilidade de bancos de dados relacionais na nuvem. Fornece capacidade econômica e redimensionável e automiza o provisionamento de hardware, configuração de bancos de dados, aplicação de patches e backups.
     <br><br>
-    Mecanismos de banco de dados na Amazon RDS: Amazon Aurora, PostgreSQL, MySQL, MariaDB, Oracle e SQL Server.
+    <strong>Mecanismos de banco de dados na Amazon RDS:</strong> Amazon Aurora, PostgreSQL, MySQL, MariaDB, Oracle e SQL Server.
     <br><br>
     <strong>Preços do Amazon RDS</strong>
     <br>
@@ -40,4 +40,15 @@
     Free tier: 750 horas de uso de instâncias db.t2.micro Single-AZ do Amazon RDS, 20 GB de armazenamento de banco de dados de SSD e 20 GB de armanezamento de backup.
     <br><br>
     <a href="https://aws.amazon.com/pt/rds/"><strong>Documentação da AWS sobre o Amazon RDS</strong></a>
+    <br><br>
+    <strong>Atividade prática</strong>
+    <br>
+    Criar uma instância RDS;<br>
+    Acessar com o MySQ Workbench e criar tabelas e inserir dados;<br>
+    Criar uma função Lambda para consultar dados em tabelas do RDS; e<br>
+    <a href="https://github.com/cassianobrexbit/dio-live-rds">Código do instrutor</a>
+    <br><br>
+    <img src="#" alt="Arquitetura de Tabelas" title="Arquitetura de Tabelas" />
+    <br>
+    <img src="#" alt="Arquitetura de Sistemas" title="Arquitetura de Sistemas" />
 </p>
