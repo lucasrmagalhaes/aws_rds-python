@@ -64,12 +64,12 @@
 </p>
 
 - Criar um database: 
-```
+```mysql
 CREATE DATABASE PERMISSIONS_DB;
 ```
 
 - Acessar o db criado:
-```
+```mysql
 USE PERMISSIONS_DB;
 ```
 
@@ -85,7 +85,7 @@ CREATE TABLE user (
 ```
 
 - Criar uma tabela de carrinho de compras:
-```
+```mysql
 CREATE TABLE role (
   id bigint(20) NOT NULL,
   name varchar(60) NOT NULL, 
@@ -93,7 +93,7 @@ CREATE TABLE role (
 );
 ```
 - Criar uma tabela user roles:
-```
+```mysql
 CREATE TABLE user_roles (
   user_id bigint(20) NOT NULL,
   role_id bigint(20) NOT NULL,
@@ -103,5 +103,33 @@ CREATE TABLE user_roles (
 );
 ```
 
-Descrição da tabela:
-```DESC user```
+- Descrição da tabela:
+```mysql
+DESC user
+```
+
+- Inserindo dados em tabelas:
+```mysql
+INSERT INTO user VALUES (1, 'lucasdarosa.ti@gmail.com', 'Lucas', 'strongpasswd');
+INSERT INTO user VALUES (2, 'igla@dio.me', 'Igla', 'strongpasswd');
+
+INSERT INTO role VALUES (3, 'ADMIN');
+INSERT INTO role VALUES (4, 'USER');
+
+INSERT INTO user_roles VALUES (1, 3);
+INSERT INTO user_roles VALUES (1, 4);
+INSERT INTO user_roles VALUES (2, 4);
+```
+
+- Verificando:
+```mysql
+SELECT * FROM user_roles;
+```
+
+- Selecionando dados da tabela associativa:
+```mysql
+SELECT user.id, user.email, user.username, role.id AS role_id, role.name AS role_name
+FROM user 
+JOIN user_roles on (user.id=user_roles.user_id)
+JOIN role on (role.id=user_roles.role_id);
+```
