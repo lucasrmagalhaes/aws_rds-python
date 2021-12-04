@@ -48,7 +48,7 @@
     Criar uma função Lambda para consultar dados em tabelas do RDS; e<br>
     <a href="https://github.com/cassianobrexbit/dio-live-rds">Código do instrutor</a>
     <br><br>
-    <img src="#" alt="Arquitetura de Tabelas" title="Arquitetura de Tabelas" />
+    <img src="https://github.com/lucasrmagalhaes/sql-aws/blob/main/assets/img/Arquitetura%20de%20Tabelas.jpg" alt="Arquitetura de Tabelas" title="Arquitetura de Tabelas" />
     <br>
-    <img src="#" alt="Arquitetura de Sistemas" title="Arquitetura de Sistemas" />
+    <img src="https://github.com/lucasrmagalhaes/sql-aws/blob/main/assets/img/Arquitetura%20do%20Sistema.jpg" alt="Arquitetura de Sistemas" title="Arquitetura de Sistemas" />
 </p>
