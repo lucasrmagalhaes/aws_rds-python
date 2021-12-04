@@ -133,3 +133,46 @@ FROM user
 JOIN user_roles on (user.id=user_roles.user_id)
 JOIN role on (role.id=user_roles.role_id);
 ```
+
+<p align="justify">
+    <strong>Configurando permissões de acesso ao RDS</strong>
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Selecionar a função criada -> Configuration -> Permissions -> Selecionar a função criada e abrir no console do AWS IAM; e
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attach policies -> Pesquisar pela policy AWSLambdaVPCAccessExecutionRole -> Attach policy.
+</p>
+
+```python
+import json
+import pymysql
+
+endpoint = 'endpoint-name'
+username = 'user-name'
+password = 'user-password'
+database_name = 'db-name'
+
+connection = pymysql.connect(host=endpoint, user=username, password=password, db=database_name)
+
+def lambda_handler(event, context):
+    
+    cursor = connection.cursor()
+    
+    cursor.execute('SELECT user.id, user.email, user.username, role.id AS role_id, role.name AS role_name FROM user JOIN user_roles on (user.id=user_roles.user_id)JOIN role on (role.id=user_roles.role_id)')
+    
+    rows = cursor.fetchall()
+    
+    return {
+        'statusCode': 200,
+        'body': json.dumps(rows)
+    }
+```
+
+<a href="https://dicasdepython.com.br/resolvido-pip-nao-e-reconhecido-como-um-comando-interno/">Comando pip - Solução</a>
+
+```
+pip install pymysql -t .
+```
+
+```
+explorer .
+```
